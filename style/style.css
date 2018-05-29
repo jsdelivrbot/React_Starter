@@ -5,3 +5,34 @@
     margin-bottom: 20px;
     font-family: fantasy;
 }
+.symptoms-list{
+	margin-top:40px;
+	margin-bottom: 40px;
+}
+.ml100{
+	margin-left: 100px;
+}
+.checkbox-name{
+	 margin-left: 10px;
+    font-size: 1.5rem;
+}
+.checkbox-size{
+	width: 20px;
+    height: 20px;
+}
+.submit-btn{
+	padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.5rem;
+    background-color: #8f9bbc;
+    cursor: pointer;
+}
+.text-center{
+	text-align: center;
+}
+.display-msg{
+	text-align: center;
+    font-size: 1.2rem;
+    color: darkred;
+    margin-bottom: 20px;
+}

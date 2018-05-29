@@ -2,8 +2,8 @@ import React from 'react';
 
 const SubmitButton = ({displayMsg}) => {
 	
-		return <div>
-		<input type="button" value="submit" onClick = {(event) => displayMsg() }/>
+		return <div className="text-center">
+		<input className="submit-btn text-center" submit-btntype="button" value="submit" onClick = {(event) => displayMsg() }/>
 		</div>;
 	
 }

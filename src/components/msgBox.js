@@ -1,6 +1,6 @@
 import React from 'react';
 
 const MsgBox = ({msg}) => {
-	return <div>{msg}</div>;
+	return <div className="display-msg">{msg}</div>;
 }
 export default MsgBox;

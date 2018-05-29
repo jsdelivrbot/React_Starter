@@ -6,8 +6,8 @@ import Checkbox from './components/checkbox';
 import MsgBox from './components/msgBox';
 import SubmitButton from './components/submitbutton';
 
-const symptoms = ["head ache" , "fever" , "cold"];
-const medicines = ["crocin","dolo 650","cetrigene","paracetamol","saridon","benadryl","don't use home remedies, go to doc before u die!"];
+const symptoms = ["Head Ache" , "Fever" , "Cold"];
+const medicines = ["Crocin","Dolo 650","Cetrigene","Paracetamol","Saridon","Benadryl","Don't use home remedies, go to doc before u die!"];
 class App extends Component {
 
   constructor(props) {
@@ -34,34 +34,41 @@ class App extends Component {
   }
 
   displayMsg = () => {
-     if(this.state.selectedSymptom.length == 1){
-      for(var i=0;i<=symptoms.length;i++){
-        if(this.handleCheck(symptoms[i]) == 0){
-           this.setState ({
-              msg : medicines[i]
-          });
-        }
-      }
-        
-     }else if(this.state.selectedSymptom.length == 2){
-      if(this.handleCheck(symptoms[0]) >= 0 && this.handleCheck(symptoms[1]) >= 0){
+    if(this.state.selectedSymptom.length > 0){
+        if(this.state.selectedSymptom.length == 1){
+          for(var i=0;i<=symptoms.length;i++){
+            if(this.handleCheck(symptoms[i]) == 0){
+               this.setState ({
+                  msg : medicines[i]
+              });
+            }
+          }
+            
+         }else if(this.state.selectedSymptom.length == 2){
+          if(this.handleCheck(symptoms[0]) >= 0 && this.handleCheck(symptoms[1]) >= 0){
+              this.setState ({
+                  msg : medicines[3]
+              });
+          }else if(this.handleCheck(symptoms[0]) >= 0 && this.handleCheck(symptoms[2]) >= 0){
+            this.setState ({
+                  msg : medicines[4]
+              });
+          }else if(this.handleCheck(symptoms[1]) >= 0 && this.handleCheck(symptoms[2]) >= 0){
+            this.setState ({
+                  msg : medicines[5]
+              });
+          }
+         }else if(this.state.selectedSymptom.length == 3){
           this.setState ({
-              msg : medicines[3]
+            msg : medicines[6]
           });
-      }else if(this.handleCheck(symptoms[0]) >= 0 && this.handleCheck(symptoms[2]) >= 0){
-        this.setState ({
-              msg : medicines[4]
-          });
-      }else if(this.handleCheck(symptoms[1]) >= 0 && this.handleCheck(symptoms[2]) >= 0){
-        this.setState ({
-              msg : medicines[5]
-          });
-      }
-     }else if(this.state.selectedSymptom.length == 3){
-      this.setState ({
-        msg : medicines[6]
-      });
-     }
+         }
+    }else{
+         this.setState ({
+            msg : "Please tell us your problem!!!"
+          })
+    }
+     
   }   
 
   
